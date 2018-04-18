@@ -1,0 +1,52 @@
+1-)
+
+int i;
+int j;
+main()
+{
+  i = 1;
+  j = 2;
+  j = i + j;
+  return;
+}
+
+----------------------------------------------------------------
+Bellekten registerlera deger yuklemek icin ->  ld
+Registerlardan bellege deger yuklemek icin ->  st
+
+				.globl i
+				.globl j
+main:		mov #1 -> %r0		// i=1
+				st %r0 -> i
+				mov #2 -> %r0		// j=2
+				st %r0 -> j
+				ld i -> %r0
+				ld j ->	%r1
+				add %r0,%r1	-> %r1	// j = i+j
+				st %r1 -> j
+				ret
+----------------------------------------------------------------
+2-)
+
+main()
+{
+  int i, j;
+
+  i = 1;
+  j = 2;
+  j = i + j;
+  return;
+}				
+
+----------------------------------------------------------------					
+main:		push #8  // Bellekte 8 byte yer ayir
+				mov #1 -> %r0
+				st %r0 -> [fp-4]   // i=1
+				mov #2 -> %r0
+				st %r0 -> [fp]		 // i=2
+				ld [fp-4] -> %r0
+				ld [fp] -> %r1
+				add %r0, %r1 -> %r1
+				st %r1 -> [fp]
+				ret
+ 
