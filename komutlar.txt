@@ -1,0 +1,39 @@
+1. Memory <-> Register instructions
+----------------------------------------------------------------------------------------
+ld mem -> %reg		// Registere bellekten deger yukle
+st %reg -> mem		// Registerdaki degeri bellekte sakla
+
+st %r0 -> i				// Registerin degerini bellekteki global degisken i ye at
+st %r0 -> [r1]		// R0 in degerini R1 in gosterdigi bellek bolgesine at
+st %r0 -> [fp+4]	// R0 in degerini fp nin gosterdigi bellek bolgesinin 4 ilerisine at
+
+*** st %r0 -> [fp+r1] // Boyle bir kullanim yok
+
+st %r0 -> [sp]--	// R0'in degerini sp nin gosterdigi bellek bolgesine at, sp'nin degerini 1 azalt
+st %r0 -> ++[sp]	// sp'nin degerini 1 artir, R0'in degerini sp'nin gosterdigi bellek bolgesine at
+
+
+2. Register <-> Register instructions
+---------------------------------------------------------------------------------------
+mov %reg1 -> %reg2					// reg1'in degerini reg2'ye at
+mov #05h -> %reg1						// 05h degerini reg1'e at
+
+add %reg1, %reg2 -> %reg3 	// reg1 ve reg2'nin degerini topla reg3'e at
+sub %reg1, %reg2 -> %reg3		// reg1'den reg2'yi cikar reg3'e at
+mul %reg1, %reg2 -> %reg3 	// reg1 ve reg2'yi carp reg3'e at
+idiv %reg1, %reg2 -> %reg3	// reg1'i reg2'ye bol sonucu reg3'e at
+imod %reg1, %reg2 -> %reg3	// reg1'in reg2'ye gore modunu al sonucu reg3'e at
+
+push %reg	// reg'deki deger kadar stackde yer ac
+push #val	// val degeri kadar stackde yer ac	
+
+pop %reg	// reg'deki degeri stack'e ekle
+pop #val 	// val degerini stack'e ekle
+
+
+3. Control instructions
+---------------------------------------------------------------------------------------
+jsr a 		// a fonksiyonuna atla
+return 		// fonksiyondan geri don
+.globl i  // global segmentte i degiskeni icin 4 byte yer ayirir
+
