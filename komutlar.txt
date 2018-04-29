@@ -24,10 +24,12 @@ mul %reg1, %reg2 -> %reg3 	// reg1 ve reg2'yi carp reg3'e at
 idiv %reg1, %reg2 -> %reg3	// reg2'yi reg1'e bol sonucu reg3'e at
 imod %reg1, %reg2 -> %reg3	// reg1'in reg2'ye gore modunu al sonucu reg3'e at
 
-push %reg	// reg'deki deger kadar stackde yer ac
+push %reg	// reg'deki deger kadar stackde yer ac // sp nin degerini azaltir daha sonra sp'nin gosterdigi yere veriyi koyarsin. cunku stack de sp memory adresi olarak 0000 a dogru hareket ediyor
+
 push #val	// val degeri kadar stackde yer ac	
 
-pop %reg	// reg'deki degeri stack'e ekle
+pop %reg	// reg'deki degeri stack'e ekle // sp asagiya dogru gider. Yani stackden eleman silmis gibi olur cunku stacke eleman ekledikce sp yukariya yani 0000 da dogru gider
+
 pop #val 	// val degerini stack'e ekle
 
 
