@@ -21,7 +21,7 @@ mov #05h -> %reg1						// 05h degerini reg1'e at
 add %reg1, %reg2 -> %reg3 	// reg1 ve reg2'nin degerini topla reg3'e at
 sub %reg1, %reg2 -> %reg3		// reg1'den reg2'yi cikar reg3'e at
 mul %reg1, %reg2 -> %reg3 	// reg1 ve reg2'yi carp reg3'e at
-idiv %reg1, %reg2 -> %reg3	// reg1'i reg2'ye bol sonucu reg3'e at
+idiv %reg1, %reg2 -> %reg3	// reg2'yi reg1'e bol sonucu reg3'e at
 imod %reg1, %reg2 -> %reg3	// reg1'in reg2'ye gore modunu al sonucu reg3'e at
 
 push %reg	// reg'deki deger kadar stackde yer ac
