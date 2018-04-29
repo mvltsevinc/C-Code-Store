@@ -9,8 +9,8 @@ st %r0 -> [fp+4]	// R0 in degerini fp nin gosterdigi bellek bolgesinin 4 ilerisi
 
 *** st %r0 -> [fp+r1] // Boyle bir kullanim yok. fp'nin registerla kullanildigi komut yok.
 
-st %r0 -> [sp]--	// R0'in degerini sp nin gosterdigi bellek bolgesine at, sp'nin degerini 1 azalt
-st %r0 -> ++[sp]	// sp'nin degerini 1 artir, R0'in degerini sp'nin gosterdigi bellek bolgesine at
+st %r0 -> [sp]--	// R0'in degerini sp nin gosterdigi bellek bolgesine at, sp'nin degerini 4 azalt ( Her komut 4 byte oldugundan olmali
+st %r0 -> ++[sp]	// sp'nin degerini 4 artir, R0'in degerini sp'nin gosterdigi bellek bolgesine at
 
 
 2. Register <-> Register instructions
